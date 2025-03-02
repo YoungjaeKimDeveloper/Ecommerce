@@ -63,7 +63,8 @@ class _ShopPageState extends State<ShopPage> {
         SizedBox(height: 20),
         Expanded(
           child: ListView.builder(
-            itemCount: 1,
+            itemCount: 4,
+            scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
               // create a shoe
               Shoe shoe = Shoe(
