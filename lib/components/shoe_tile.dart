@@ -17,9 +17,14 @@ class ShoeTile extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           // shoe pic
-          Image.asset(shoe.imagePath, height: 250, width: 350),
+          FittedBox(
+            fit: BoxFit.fill,
+            clipBehavior: Clip.hardEdge,
+            child: Image.asset(shoe.imagePath, height: 250, width: 320),
+          ),
           // description
           Text(
             shoe.description,
@@ -28,13 +33,40 @@ class ShoeTile extends StatelessWidget {
           // price + details
           SizedBox(height: 20),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 60),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(shoe.name, style: TextStyle(fontWeight: FontWeight.bold)),
-                Text(shoe.price),
-              ],
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            child: Container(
+              margin: EdgeInsets.only(top: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    child: Row(
+                      children: [
+                        Text(
+                          shoe.name,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 21.0,
+                          ),
+                        ),
+                        SizedBox(width: 10.0),
+                        Text('\$${shoe.price}'),
+                      ],
+                    ),
+                  ),
+                  GestureDetector(
+                    child: Container(
+                      padding: EdgeInsets.all(10.0),
+                      decoration: BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      child: Icon(Icons.add, size: 20.0, color: Colors.white),
+                    ),
+                  ),
+                ],
+              ),
+              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             ),
           ),
           // button to add to cart
