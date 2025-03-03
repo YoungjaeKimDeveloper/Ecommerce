@@ -7,7 +7,7 @@ class Shoe {
   final String price;
   final String imagePath;
   final String description;
-  
+
   // 생성자의 매개변수
   // Constructor Parameters
   Shoe({

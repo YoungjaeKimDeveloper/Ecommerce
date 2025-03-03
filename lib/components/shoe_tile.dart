@@ -50,7 +50,7 @@ class ShoeTile extends StatelessWidget {
                           ),
                         ),
                         SizedBox(width: 10.0),
-                        Text('\$${shoe.price}'),
+                        Text('\$${shoe.price}', style: TextStyle(fontSize: 10)),
                       ],
                     ),
                   ),
