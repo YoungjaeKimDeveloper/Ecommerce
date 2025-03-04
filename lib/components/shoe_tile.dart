@@ -4,8 +4,9 @@ import "../models/shoe.dart";
 class ShoeTile extends StatelessWidget {
   // Member Variables
   Shoe shoe;
+  void Function()? onTap;
   // Constructor Parameters
-  ShoeTile({super.key, required this.shoe});
+  ShoeTile({super.key, required this.shoe, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +27,12 @@ class ShoeTile extends StatelessWidget {
             child: Image.asset(shoe.imagePath, height: 250, width: 320),
           ),
           // description
-          Text(
-            shoe.description,
-            style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),
+          Padding(
+            padding: EdgeInsets.only(top: 10, left: 20, right: 20),
+            child: Text(
+              shoe.description,
+              style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),
+            ),
           ),
           // price + details
           SizedBox(height: 20),
@@ -55,6 +59,7 @@ class ShoeTile extends StatelessWidget {
                     ),
                   ),
                   GestureDetector(
+                    onTap: onTap,
                     child: Container(
                       padding: EdgeInsets.all(10.0),
                       decoration: BoxDecoration(

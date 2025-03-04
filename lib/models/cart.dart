@@ -52,6 +52,8 @@ class Cart extends ChangeNotifier {
     return userCart;
   }
 
+  // 장바구니에 넣어주기 / 지워주기
+  // Manipulate the cart
   // add items to cart
   void addItemToCart(Shoe shoe) {
     userCart.add(shoe);
