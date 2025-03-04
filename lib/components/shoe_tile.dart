@@ -24,7 +24,16 @@ class ShoeTile extends StatelessWidget {
           FittedBox(
             fit: BoxFit.fill,
             clipBehavior: Clip.hardEdge,
-            child: Image.asset(shoe.imagePath, height: 250, width: 320),
+            child: Container(
+              height: 200,
+              // width: 200,
+              child: Image.asset(
+                shoe.imagePath,
+                height: 250,
+                width: 320,
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
           // description
           Padding(

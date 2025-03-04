@@ -60,7 +60,15 @@ class _HomePageState extends State<HomePage> {
               decoration: BoxDecoration(color: Colors.grey[900]),
               child: Padding(
                 padding: EdgeInsets.only(top: 40),
-                child: Image.asset("lib/images/nike_logo.png", width: 200),
+                child: Container(
+                  decoration: BoxDecoration(color: Colors.grey),
+
+                  child: Image.asset(
+                    "lib/images/nike_logo.png",
+
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
             ),
             // Home
